@@ -30,6 +30,9 @@ import {
   IconUser,
   IconTag,
   IconFilter,
+  IconChevronDown,
+  IconChevronRight,
+  IconServer,
 } from '@tabler/icons-react';
 
 const APPGROUP_ID = '6a2018ee8bf56a0f1664dfd0';
@@ -84,6 +87,7 @@ export default function DashboardOverview() {
 
   const [selectedRepo, setSelectedRepo] = useState<string>('all');
   const [createOpen, setCreateOpen] = useState(false);
+  const [envOpen, setEnvOpen] = useState(false);
   const [editIssue, setEditIssue] = useState<EnrichedIssues | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<EnrichedIssues | null>(null);
   const [presetStatus, setPresetStatus] = useState<string | undefined>(undefined);
@@ -376,6 +380,43 @@ export default function DashboardOverview() {
           enablePhotoLocation={AI_PHOTO_LOCATION['Issues']}
         />
       )}
+
+      {/* ENV Debug Panel */}
+      <div className="rounded-2xl border border-border bg-card overflow-hidden">
+        <button
+          className="w-full flex items-center gap-2 px-4 py-3 text-left hover:bg-muted/50 transition-colors"
+          onClick={() => setEnvOpen(o => !o)}
+        >
+          <IconServer size={16} className="text-muted-foreground shrink-0" />
+          <span className="text-sm font-medium text-muted-foreground">ENV Debug Panel</span>
+          {envOpen
+            ? <IconChevronDown size={15} className="text-muted-foreground ml-auto" />
+            : <IconChevronRight size={15} className="text-muted-foreground ml-auto" />}
+        </button>
+        {envOpen && (
+          <div className="border-t border-border px-4 py-3 space-y-2">
+            {([
+              ['REPO_NAME', __REPO_NAME__],
+              ['E2B_SANDBOX_ID', __E2B_SANDBOX_ID__],
+              ['E2B_TEMPLATE_ID', __E2B_TEMPLATE_ID__],
+              ['LA_FRONTEND_URL', __LA_FRONTEND_URL__],
+              ['GIT_PUSH_URL', __GIT_PUSH_URL__],
+              ['ANTHROPIC_API_KEY', __ANTHROPIC_API_KEY__ ? `${__ANTHROPIC_API_KEY__.slice(0, 8)}…` : '(leer)'],
+            ] as [string, string][]).map(([key, val]) => (
+              <div key={key} className="flex items-start gap-3 text-xs font-mono">
+                <span className="text-muted-foreground shrink-0 w-44">{key}</span>
+                <span className="text-foreground break-all">{val || '(leer)'}</span>
+              </div>
+            ))}
+            <details className="text-xs font-mono mt-2">
+              <summary className="cursor-pointer text-muted-foreground hover:text-foreground">Alle process.env anzeigen</summary>
+              <pre className="mt-2 p-2 bg-muted rounded-lg overflow-x-auto text-[11px] leading-relaxed max-h-64 overflow-y-auto whitespace-pre-wrap break-all">
+                {JSON.stringify(JSON.parse(__PROCESS_ENV__), null, 2)}
+              </pre>
+            </details>
+          </div>
+        )}
+      </div>
 
       {/* Delete Confirm */}
       <ConfirmDialog
