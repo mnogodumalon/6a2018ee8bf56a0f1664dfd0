@@ -1,0 +1,32 @@
+{
+  "RepositoriesDialog.tsx": {
+    "name": "z. B. react-hooks-form",
+    "beschreibung": "Kurze Beschreibung, Zweck des Repositories...",
+    "url": "https://github.com/owner/repo",
+    "inhaber": "z. B. react-hook-form",
+    "erstellungsdatum": "Wann wurde es erstellt?"
+  },
+  "IssuesDialog.tsx": {
+    "titel": "z. B. Fehler beim Form-Submit",
+    "beschreibung": "Problembeschreibung, Schritte zum Reproduzieren...",
+    "repository": "Welches Repository?",
+    "status": "Status wählen",
+    "prioritaet": "Priorität bestimmen",
+    "typ": "Issue-Typ wählen",
+    "labels": "Labels zuweisen",
+    "meilenstein": "z. B. v2.0",
+    "faelligkeitsdatum": "Bis wann soll es erledigt sein?",
+    "bearbeiter_vorname": "z. B. Max",
+    "bearbeiter_nachname": "z. B. Mustermann",
+    "melder_vorname": "z. B. Anna",
+    "melder_nachname": "z. B. Schmidt",
+    "erstellt_am": "Zeitpunkt der Erstellung"
+  },
+  "KommentareDialog.tsx": {
+    "issue": "Zu welcher Issue kommentieren?",
+    "kommentar_text": "Deine Anmerkung, Feedback, Lösung...",
+    "autor_vorname": "z. B. Max",
+    "autor_nachname": "z. B. Mustermann",
+    "erstellt_am": "Zeitpunkt des Kommentars"
+  }
+}

@@ -1,0 +1,5 @@
+- Repositories (repositories): name[string/text], beschreibung[string/textarea], url[string/url], inhaber[string/text], sichtbarkeit[lookup/radio], erstellungsdatum[date/date]
+- Issues (issues): titel[string/text], beschreibung[string/textarea], repository[applookup/select], status[lookup/select], prioritaet[lookup/select], typ[lookup/select], labels[multiplelookup/checkbox], meilenstein[string/text], faelligkeitsdatum[date/date], bearbeiter_vorname[string/text], bearbeiter_nachname[string/text], melder_vorname[string/text], melder_nachname[string/text], erstellt_am[date/datetimeminute]
+  → repository links to app_id 6a2018d55773ce092125236a
+- Kommentare (kommentare): issue[applookup/select], kommentar_text[string/textarea], autor_vorname[string/text], autor_nachname[string/text], erstellt_am[date/datetimeminute]
+  → issue links to app_id 6a2018da19545f2ab61978ca

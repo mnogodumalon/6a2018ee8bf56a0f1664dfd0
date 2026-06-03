@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "Repositories": {
+      "placeholders_set": 5,
+      "defaults_keys": ["erstellungsdatum"],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten für GitHub-Repositories — keine numerischen Felder, keine Applookup-Ketten, keine berechenbaren Größen. Nur Metadatum-Default (Erstellungsdatum=heute)."
+    },
+    "Issues": {
+      "placeholders_set": 13,
+      "defaults_keys": ["status", "erstellt_am"],
+      "computed_keys": [],
+      "reason": "Issue-Tracking mit Klassifizierung (Status, Priorität, Typ, Labels), aber keine numerischen Felder und keine Preislogik. Defaults: Status='Offen', Erstellungszeit=jetzt. Keine Computed-Formeln nötig."
+    },
+    "Kommentare": {
+      "placeholders_set": 5,
+      "defaults_keys": ["erstellt_am"],
+      "computed_keys": [],
+      "reason": "Reine Kommentar-Entität mit Applookup auf Issue. Keine numerischen Felder, keine Dauer-Berechnung, keine Preislogik. Nur Erstellungszeit-Default."
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "forms": [
+    {
+      "entity": "repositories",
+      "app_id": "6a2018d55773ce092125236a",
+      "path": "/rest/apps/6a2018d55773ce092125236a/records",
+      "allowed_fields": [
+        "name",
+        "beschreibung",
+        "url",
+        "inhaber",
+        "sichtbarkeit",
+        "erstellungsdatum"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Repositories — Formular"
+    },
+    {
+      "entity": "issues",
+      "app_id": "6a2018da19545f2ab61978ca",
+      "path": "/rest/apps/6a2018da19545f2ab61978ca/records",
+      "allowed_fields": [
+        "titel",
+        "beschreibung",
+        "status",
+        "prioritaet",
+        "typ",
+        "labels",
+        "meilenstein",
+        "faelligkeitsdatum",
+        "bearbeiter_vorname",
+        "bearbeiter_nachname",
+        "melder_vorname",
+        "melder_nachname",
+        "erstellt_am"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Issues — Formular"
+    },
+    {
+      "entity": "kommentare",
+      "app_id": "6a2018db7f79b8b00580989b",
+      "path": "/rest/apps/6a2018db7f79b8b00580989b/records",
+      "allowed_fields": [
+        "kommentar_text",
+        "autor_vorname",
+        "autor_nachname",
+        "erstellt_am"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Kommentare — Formular"
+    }
+  ]
+}
